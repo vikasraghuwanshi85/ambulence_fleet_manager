@@ -1,23 +1,23 @@
 {
-  "name": "Ambulance Fleet Manager",
-  "short_name": "Ambulance",
-  "description": "Fleet Fuel & Maintenance Tracker - 12 Month Sheets",
-  "start_url": "./index.html",
+  "name": "Janani Fleet Management",
+  "short_name": "Janani Fleet",
+  "description": "Janani Fleet - Fuel, Maintenance & Bill Log - Date | File Name | Vehicle | Drive Link | Original Date | Uploaded At",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
-  "orientation": "portrait",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "orientation": "any",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='68%' dominant-baseline='middle' text-anchor='middle' font-size='60'>\ud83d\ude91</text></svg>",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='68%' dominant-baseline='middle' text-anchor='middle' font-size='60'>\ud83d\ude91</text></svg>",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]

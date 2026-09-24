@@ -63,7 +63,6 @@
       <div class="min-w-0 flex-1">
         <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900">Janani Fleet Management</h1>
         <p class="text-xs sm:text-sm text-slate-500 mt-1 flex flex-wrap items-center gap-1">
-          <span>V53 + Bill Log • Fixed No Data Issue</span>
           <span class="hidden sm:inline">•</span>
           <span id="connStatus" class="font-medium text-amber-600">Loading...</span>
         </p>
@@ -100,7 +99,6 @@
     <div class="flex gap-2 mt-3 sm:mt-4">
       <button onclick="applyFilter()" class="flex-1 sm:flex-none bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold min-h-[44px]">Apply Filters</button>
       <button onclick="setThisMonth()" class="flex-1 sm:flex-none bg-white hover:bg-slate-50 border px-5 py-2.5 rounded-xl text-sm font-medium min-h-[44px]">This Month</button>
-      <button onclick="showDebug()" class="bg-slate-100 hover:bg-slate-200 border px-4 py-2.5 rounded-xl text-xs min-h-[44px]">Debug</button>
     </div>
   </div>
 
@@ -566,8 +564,7 @@ function render(data){
     <div class="card py-3 sm:py-4"><div class="text-[10px] sm:text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Avg Fuel</div><div class="text-lg sm:text-xl font-bold mt-1">${avgFuel}</div></div>
     <div class="card py-3 sm:py-4"><div class="text-[10px] sm:text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Maint Cost</div><div class="text-lg sm:text-xl font-bold mt-1">₹${totalBill.toFixed(0)}</div></div>
   `;
-
-  document.getElementById('countBadge').textContent=`${goodRows.length} good`;
+  
   document.getElementById('vehicleCountBadge').textContent=`${uniqueVehicles.size} vehicles`;
   
   if(data.length === 0){

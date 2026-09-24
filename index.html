@@ -145,8 +145,7 @@
   <div id="billSection" class="card mb-6 p-0 overflow-hidden hidden">
     <div class="p-3 sm:p-4 md:p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b bg-amber-50/50">
       <h3 class="text-sm font-bold flex flex-wrap items-center gap-2">
-        <span>📄 Bill Log - 6 Columns</span>
-        <span class="font-normal text-slate-500 text-xs hidden sm:inline">Date | File Name | Vehicle | Drive Link | Original Date | Uploaded At</span>
+        <span>📄 Bill Log</span>
         <span id="billCountBadge2" class="bg-amber-500 text-white border px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px]">0 bills</span>
         <span id="billDriveCount" class="bg-green-50 text-green-700 border px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px]"></span>
       </h3>
@@ -158,10 +157,6 @@
     <div id="billKpis" class="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 bg-slate-50/50"></div>
     <div id="noBillMsg" class="hidden m-3 text-xs text-amber-700 bg-amber-50 border border-amber-200 px-3 py-3 rounded-xl">
       <div class="font-bold">No Bill Log data found</div>
-      <div class="mt-1">1. Make sure Apps Script is deployed as <b>V72 6 cols</b> version<br>
-      2. Run <b>python FINAL_janani_webhook.py --days 7</b> to push bills to Bill log sheet<br>
-      3. Check Sheet "Bill log" has 6 columns: Date | File Name | Vehicle | Drive Link | Original Date | Uploaded At<br>
-      4. Click Debug button to see raw response</div>
     </div>
     <div class="desktop-table overflow-auto max-h-[70vh] md:max-h-[800px]">
       <table class="w-full text-xs">
@@ -443,7 +438,7 @@ async function fetchBillLog(){
     document.getElementById('billDriveCount').textContent = `${withLinks} with Drive links`;
 
     if(billLogCache.length === 0){
-      document.getElementById('connStatus').textContent=`Bill Log: 0 files (raw had ${raw.length})`;
+      
       document.getElementById('noBillMsg').classList.remove('hidden');
       document.getElementById('noBillMsg').innerHTML = `<div class="font-bold">No Bill Log data found (raw: ${raw.length} entries)</div>
       <div class="mt-2">Response version: ${data.v || 'no v'} | Sheet: ${data.sheet || data.targetSheet || 'unknown'} | Cols: ${data.cols || 'unknown'}</div>
@@ -453,7 +448,6 @@ async function fetchBillLog(){
       4. Raw keys: ${raw[0] ? Object.keys(raw[0]).join(', ') : 'no data'}<br>
       5. Click Debug to see full response</div>`;
     } else {
-      document.getElementById('connStatus').textContent=`Bill Log: ${billLogCache.length} files`;
       document.getElementById('noBillMsg').classList.add('hidden');
     }
     
